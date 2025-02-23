@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My DApp</title>
+</head>
+<body>
+    <h1>Welcome to My DApp</h1>
+
+    <button id="connectButton" onclick="connectWallet()">Connect Wallet</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.0.2/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/walletconnect-web3-provider@0.7.28/dist/walletconnect-web3-provider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@luckyunicorn/web3modal@1.9.6/dist/index.min.js"></script>
+
+
+    <script>
+        async function connectWallet() {
+            try {
+                // Create a new instance of Web3Modal
+                const web3Modal = new Web3Modal({
+                    providerOptions: {
+                        walletconnect: {
+                            package: WalletConnectProvider,
+                            options: {
+                                infuraId: 'YOUR_INFURA_PROJECT_ID' // Replace with your Infura Project ID
+                            }
+                        }
+                    }
+                });
+
+                // Connect to the wallet
+                const provider = await web3Modal.connect();
+
+                // Get the web3 instance
+                const web3 = new Web3(provider);
+
+                // Now you can use the web3 instance to interact with the blockchain
+                // For example, you can retrieve the user's address
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+                console.log('Connected with address:', userAddress);
+
+                // You can also listen for events, such as when the connection is closed
+                provider.on('disconnect', (code, reason) => {
+                    console.log('Disconnected with code:', code, 'Reason:', reason);
+                });
+
+                // ... Perform additional actions with the connected wallet ...
+            } catch (error) {
+                console.error('Error connecting to wallet:', error);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZK FINANCE: DeFi built on zkEVM</title>
+<meta name="description" content="zk finance is a DeFi platform built on zkEVM" />
+<meta name="keywords"
+    content="zk finance, zkfinance,zkfinance.net, zkevm, zero knowledge, bitcoin, ethereum, ico, token, zkps, defi, defi project" />
+<meta name="author" content="zkfinance" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/images/transparent_logo_purple.png" />
+
+<!-- Bootstrap & Plugins CSS -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
+
+<!-- Custom CSS -->
+<link href="assets/css/purple.css" rel="stylesheet" type="text/css">
+
+<style>
+    .announcement-bar {
+        background-color: #e7497e;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        font-family: "Raleway", sans-serif;
+        /* text-decoration: underline; */
+    }
+
+    #connectButton {
+        position: absolute;
+        top: 53px;
+        right: 10px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 1200px) {
+        .announcement-bar {
+            background-color: e7497e;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #connectButton {
+            position: absolute;
+            top: 73px;
+            right: 2px;
+            font-size: 13px;
+            height: 33px;
+            line-height: 33px;
+            padding-left: 10px;
+            padding-right: 8px;
+            border-radius: 15px;
+        }
+
+        #footer {
+            /* display: none; */
+            position: absolute;
+            ;
+        }
+
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div class="loading-wrapper">
+        <div class="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <!-- <div>
+            <p class="announcement-bar"> Attention: Beta Testnet Launching Soon,be
+                part of our beta testing community! <a style="color: #3B566E;" href="https://zkfinance.net/"
+                    target="_blank">Join
+                    the Waitlist</a></p>
+        </div> -->
+        <div>
+            <p class="announcement-bar"> Attention: Beta Testnet Launching Soon, be part of our beta testing community!
+                <a style="color: #3B566E;">
+                    <span onmouseover="this.innerHTML = 'Coming Soon'"
+                        onmouseout="this.innerHTML = 'Join the Waitlist'">Join the Waitlist</span>
+                </a>
+            </p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo">
+                            <!-- <img src="assets/images/logos/zk.png" class="light-logo" alt="Arda ICO"/> -->
+                            <img src="assets/images/logos/zk_finance_red_white.png" class="light-logo" alt="Arda ICO"
+                                width="140" height="35" />
+                            <img src="assets/images/logos/zk_finnance_red_dark.png" class="dark-logo" alt="Arda ICO"
+                                width="140" height="35" />
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                    </nav>
+                </div>
+            </div>
+            <button id="connectButton" class="btn-secondary-box" onclick="connectWeb3()">Connect</button>
+            <!-- Button to connect with Metamask -->
+            <button id="connectButton" onclick="connectWeb3('metamask')">Connect with Metamask</button>
+
+            <!-- Button to connect with WalletConnect -->
+            <button id="connectWalletButton" onclick="connectWeb3('walletconnect')">Connect with WalletConnect</button>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Wellcome Area Start ***** -->
+    <section class="welcome-area bg-top-right" id="welcome-1">
+        <div class="header-token">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 align-self-center">
+                        <h1>Accelerating DeFi<br>Built on zkEVM</h1>
+                        <p>Aim to provide users with a platform for accessing decentralized financial services such as
+                            lending, borrowing, and trading with the privacy and security of zero-knowledge technology
+                        </p>
+                        <!-- <a href="#" class="btn-secondary-box" target="_blank">Join the Waitlist</a> -->
+                        <a class="btn-secondary-box" disabled>
+                            <span onmouseover="this.innerHTML = 'Coming Soon'"
+                                onmouseout="this.innerHTML = 'Join the Waitlist'">Join the Waitlist</span>
+                        </a>
+                    </div>
+                    <div id="landing-pic" class="col-lg-6 col-md-12 col-sm-12 col-12 align-self-center">
+                        <div class="header-image">
+                            <img src="assets/images/header.svg" class="img-fluid d-block mx-auto" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Wellcome Area End ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <footer id="footer">
+        <div class="footer-top" style="height: 0px; padding: 0px;">
+            <div class="container">
+                <div class="row">
+                    <div class="contact" style="margin-top: 25px; margin-bottom: 15px;">
+                        <p class="copyright" style="margin-top: 0; margin-bottom: 0;">2022 © ZK FINANCE: DeFi built on
+                            zkEVM</p>
+                        <ul class="social" style="margin-top: 5px;">
+                            <li><a href="https://t.me/ZkFiOfficial" target="_blank"><i
+                                        class="fa fa-paper-plane-o"></i></a></li>
+                            <li><a href="https://twitter.com/ZkFiOfficial" target="_blank"><i
+                                        class="fa fa-twitter-square"></i></a></li>
+                            <li><a href="https://www.instagram.com/zkfinance/" target="_blank"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/zk-finance" target="_blank"><i
+                                        class="fa fa-linkedin-square"></i></a></li>
+                            <li><a href="https://github.com/zkfinancee" target="_blank"><i
+                                        class="fa fa-github-square"></i></a></li>
+                            <li><a href="https://medium.com/@ZkFiOfficial" target="_blank"><i
+                                        class="fa fa-medium"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/jquery.downCount.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/particle-purple.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- <script>
+        async function connectWeb3() {
+
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                alert("Please open on Metamask wallet or desktop to connect.");
+            }
+            if (typeof window.ethereum !== 'undefined') {
+                // Request the user's permission to access their accounts
+                try {
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+                    // Connection successful, handle the connected account
+                    const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+                    const connectedAccount = accounts[0];
+                    console.log('Connected account:', connectedAccount);
+                    // Update the button text or perform other actions for the connected account
+
+                    const connectButton = document.getElementById('connectButton');
+                    connectButton.innerText = 'Connected';
+                    connectButton.disabled = true;
+                    connectButton.className = 'btn-secondary-box';
+                    connectButton.style.backgroundColor = '#ffffff';
+                    connectButton.style.color = '#3B566E';
+
+                    // Set the connected address as the title for the button
+                    connectButton.title = `Connected Address: ${connectedAccount}`;
+
+                } catch (error) {
+                    // Handle error
+                    console.error('Error connecting to Web3 provider:', error);
+                }
+            } else {
+                // Handle the case where the user doesn't have MetaMask or another compatible provider
+                console.error('Web3 provider not found');
+            }
+        }
+    </script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@walletconnect/browser@latest"></script>
+    <script>
+        async function connectWeb3(wallet) {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                alert("Please open on a desktop or use a compatible wallet to connect.");
+            }
+            try {
+                let provider;
+                if (wallet === 'metamask') {
+                    if (typeof window.ethereum !== 'undefined') {
+                        provider = window.ethereum;
+                    } else {
+                        console.error('Metamask provider not found');
+                        return;
+                    }
+                } else if (wallet === 'walletconnect') {
+                    if (typeof window.WalletConnectProvider !== 'undefined') {
+                        provider = new window.WalletConnectProvider({
+                            // WalletConnect options
+                        });
+                    } else {
+                        console.error('WalletConnect provider not found');
+                        return;
+                    }
+                } else {
+                    console.error('Invalid wallet option');
+                    return;
+                }
+
+                // Request the user's permission to access their accounts
+                await provider.request({ method: 'eth_requestAccounts' });
+
+                // Connection successful, handle the connected account
+                const accounts = await provider.request({ method: 'eth_accounts' });
+                const connectedAccount = accounts[0];
+                console.log('Connected account:', connectedAccount);
+                // Update the button text or perform other actions for the connected account
+
+                const connectButton = document.getElementById('connectButton');
+                connectButton.innerText = 'Connected';
+                connectButton.disabled = true;
+                connectButton.className = 'btn-secondary-box';
+                connectButton.style.backgroundColor = '#ffffff';
+                connectButton.style.color = '#3B566E';
+
+                // Set the connected address as the title for the button
+                connectButton.title = `Connected Address: ${connectedAccount}`;
+
+            } catch (error) {
+                // Handle error
+                console.error('Error connecting to Web3 provider:', error);
+            }
+        }
+    </script>
+
+    <!-- Include the WalletConnect library -->
+    <script src="https://cdn.jsdelivr.net/npm/@walletconnect/browser@latest"></script>
+
+    <!-- Button to connect with Metamask -->
+    <button id="connectMetamaskButton" onclick="connectWeb3('metamask')">Connect with Metamask</button>
+
+    <!-- Button to connect with WalletConnect -->
+    <button id="connectWalletConnectButton" onclick="connectWeb3('walletconnect')">Connect with WalletConnect</button>
+
+
+</body>
+
+</html>
